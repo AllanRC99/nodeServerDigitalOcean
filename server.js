@@ -3,12 +3,17 @@ var app = express();
 
 app.get("/", function(req, res)
 {
-	res.sendFile(__dirname + "/index.html");
+	res.sendFile(__dirname + "/inicioServer.html");
 })
 
 app.get("/federer", function(req, res)
 {
 	res.sendFile(__dirname +  "/descarga.jpg" );
+})
+
+app.get("/index.html", function(req, res)
+{
+	res.sendFile(__dirname +  "/index.html" );
 })
 
 app.get("/:nombre", function(req, res)
