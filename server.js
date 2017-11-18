@@ -3,12 +3,17 @@ var app = express();
 
 app.get("/", function(req, res)
 {
-	res.send("servidor funcionando")
+	res.send("servidor funcionando");
+})
+
+app.get("/federer", function(req, res)
+{
+	res.sendFile( "D:/Documents/GitHub/nodeServerDigitalOcean/descarga.jpg" );
 })
 
 app.get("/:nombre", function(req, res)
 {
-	res.send("No hay ninguna ruta con este nombre " + req.params.nombre);
+	res.send("No hay una ruta para "+ req.params.nombre);
 })
 
 app.listen(80, function()
