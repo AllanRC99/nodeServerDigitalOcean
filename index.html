@@ -1,0 +1,48 @@
+<script src= "https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.js"> </script>
+
+<div id='app'>
+<h1 onclick="prompt('hola') ">Hola</h1>
+<h2>{{message}}</h2>
+<h2>{{nuevaPersona}}</h2>
+<ul>
+	<li  v-for='persona in personas'> {{persona}}</li>
+</ul>
+<input id = 'miInput' class = 'miClase' v-model='nuevaPersona' placeholder = 'ingresa tu nombre'> </input>
+<button @click='agregarPersona()' >Boton ACM</button>
+
+</div>
+
+<script>
+
+
+imprimir = function(pTexto){
+	var elInput = document.getElementById('miImput')
+	console.log(elInput.value)
+}
+
+agregarPersona = function(pNombre){
+	var elInput = document.getElementById('miImput')
+	personas.push(elInput.value)
+	document.getElementById(miInput).value = ''
+	console.log(personas)
+}
+
+//objeto de la clase vue
+var app = new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello ACM!',
+		personas: ["juliana", "laura", "ignacio"],
+		nuevaPersona: ''
+  },
+	methods:{
+		//this. sirve para acceder otros metodos y atributos de arriba.
+		agregarPersona: function(){
+			this.personas.push(this.nuevaPersona)
+			this.nuevaPersona = ''
+
+		}
+	}
+})
+
+</script>
