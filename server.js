@@ -3,7 +3,7 @@ var app = express();
 
 app.get("/", function(req, res)
 {
-	res.send("servidor funcionando");
+	res.sendFile(__dirname + "/index.html");
 })
 
 app.get("/federer", function(req, res)
