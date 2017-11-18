@@ -8,7 +8,7 @@ app.get("/", function(req, res)
 
 app.get("/federer", function(req, res)
 {
-	res.sendFile( "D:/Documents/GitHub/nodeServerDigitalOcean/descarga.jpg" );
+	res.sendFile(__dirname +  "/descarga.jpg" );
 })
 
 app.get("/:nombre", function(req, res)
